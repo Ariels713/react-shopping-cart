@@ -19,11 +19,16 @@ function App() {
         // setCart Funtion, pass in current value (cart array) and the new item.
         setCart([...cart, item])
 
-	};
+    };
+    
+    // const values = {
+    //     products,
+    //     addItem()
+    // }
 
 	return (
 
-        <ProductContext>
+        <ProductContext value={{products, addItem}}>
 		<div className="App">
 			<Navigation cart={cart} />
 
