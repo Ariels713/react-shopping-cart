@@ -105,15 +105,19 @@ products route to no longer use render props.
 let's head over to our `Products` component and import the `useContext` hook as well as 
 our `ProductContext`.
 
-- In the component, call the `useContext` hook and pass in the context object we want to use into it.
+- In the component, call the `useContext` hook and pass in the context object we want to use 
+into it.
 
-- When we do this, `useContext` is going to return value passed by our `ProductContext` Provider `value` prop. In our case we're getting back an object with two properties. A `products` property and a `addItem` property. We can go ahead and destructure those.
+- When we do this, `useContext` is going to return value passed by our `ProductContext` 
+Provider `value` prop. In our case we're getting back an object with two properties. 
+A `products` property and a `addItem` property. We can go ahead and destructure those.
 
 ```js
 const { products, addItem } = useContext(ProductContext);
 ```
 
-- Now that we have all of the data we need we can refactor our `Products` component from using props.
+- Now that we have all of the data we need we can refactor our `Products` component from using 
+props.
 
 - To do so we just need to remove every instance of `props`.
 
@@ -125,21 +129,29 @@ const { products, addItem } = useContext(ProductContext);
 
 **STEP 5 - Create the CartContext**
 
-- Now that we have refactored our `Products` component to utilize `Context API` let's refactor our `Cart` and `Navigation` Component to use `Context API` as well.
+- Now that we have refactored our `Products` component to utilize `Context API` let's refactor 
+our `Cart` and `Navigation` Component to use `Context API` as well.
 
-- To start create a new file in our contexts folder named `CartContext.js`, this context is going to be utilized by our `ShoppingCart` and `Navigation` component.
+- To start create a new file in our contexts folder named `CartContext.js`, this context 
+is going to be utilized by our `ShoppingCart` and `Navigation` component.
 
-- Inside of our new `CartContext` import `createContext` and create a new context named `CartContext`.
+- Inside of our new `CartContext` import `createContext` and create a new context 
+named `CartContext`.
 
 **STEP 5 - Providing data with CartContext**
 
-- Let's go ahead and bring our newly created `CartContext` into our `App.js` and wrap all of our components inside of our `CartContext.Provider`. Make sure our `ProductContext.Provider` is still the root provider.
+- Let's go ahead and bring our newly created `CartContext` into our `App.js` 
+and wrap all of our components inside of our `CartContext.Provider`. 
+Make sure our `ProductContext.Provider` is still the root provider.
 
-- Now pass a value prop to our `CartContext.Provider`, this value prop is going to contain our `cart` state.
+- Now pass a value prop to our `CartContext.Provider`, this value prop is going to contain 
+our `cart` state.
 
-- Now that we're providing our cart data, we can start to refactor our `Navigation` and `ShoppingCart` components.
+- Now that we're providing our cart data, we can start to refactor our `Navigation` and 
+`ShoppingCart` components.
 
-- Let's start with our `ShoppingCart` component first. Go ahead and refactor the `ShoppingCart` route to no longer use render props. This will throw us an error, but we'll be able to resolve it quickly.
+- Let's start with our `ShoppingCart` component first. Go ahead and refactor the `ShoppingCart` 
+route to no longer use render props. This will throw us an error, but we'll be able to resolve it quickly.
 
 - While were at it let's go ahead and remove the props from our navigation as well.
 
